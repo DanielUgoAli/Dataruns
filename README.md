@@ -17,7 +17,8 @@ Soon to be on pypi just more work needed.
 ```bash
 git clone https://github.com/DanielUgoAli/Dataruns.git
 cd Dataruns
-pip install -r requirements.txt
+uv sync
+uv pip install -e .
 ```
 
 ## Usage
