@@ -64,4 +64,4 @@ result = pipeline(pd.DataFrame({'A': [1, 2, None, 4]}))
 
 ## Help
 
-### Help is much appreciated just open a pull request 😗
+### Help is much appreciated just open a pull request or issues😗
