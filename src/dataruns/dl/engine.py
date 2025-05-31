@@ -1,9 +1,6 @@
-# To be rewritten from scratch
-# This code is a simplified version of a deep learning engine that includes basic components
-# Not to be used or exposed
-
 from abc import ABC, abstractmethod
 import numpy as np 
+import numba as nb
 
 class Module(ABC):
     """

@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Dict
+from typing import Dict, List
 import csv, sqlite3
 import requests
 import os
@@ -7,7 +7,6 @@ import os
 from openpyxl import load_workbook
 import pandas as pd
 from requests.models import Response
-
 
 class Datasource(ABC):
     """Base class for all data sources"""
@@ -18,24 +17,33 @@ class Datasource(ABC):
 
 
 class CSVSource(Datasource):
-    """CSV file data source"""
+    """CSV file data source
+    
+    Usage
+    ----------
+
+    source = CSVSource(file_path='data.csv')\n
+    dataframe = source.extract_data()\n
+    dataframe.head()\n
+
+    """
     def __init__(self, file_path: str=None, url: str=None):
         self.file_path = file_path
         self.url = url
         
     def _download_csv(self, url: str):
-        response = requests.get(url)
+            response = requests.get(url)
 
-        if response.status_code == 200:
-            local_file_path = os.path.join(os.getcwd(), 'downloaded_data.csv')
-            with open(local_file_path, 'wb') as file:
-                file.write(response.content)
-                print("Downloaded CSV file Successfully📎")
-                return local_file_path
-        else:
-            raise Exception(f"Failed to download file. Status code: {response.status_code}")
+            if response.status_code == 200:
+                local_file_path = os.path.join(os.getcwd(), 'downloaded_data.csv')
+                with open(local_file_path, 'wb') as file:
+                    file.write(response.content)
+                    print("Downloaded CSV file Successfully📎")
+                    return local_file_path
+            else:
+                raise Exception(f"Failed to download file. Status code: {response.status_code}")
 
-    def extract_data(self) -> pd.DataFrame:
+    def extract_data(self, **kwargs) -> pd.DataFrame:
         if self.url is not None:
             file_path = self._download_csv(self.url)
         elif self.file_path is not None:
@@ -50,17 +58,28 @@ class CSVSource(Datasource):
         data = pd.DataFrame(data)
         return data
 
+# Experimental
 class SQLiteSource(Datasource):
-    """sqlite file data source"""
+    """
+    sqlite file data source
+    b
+    Warning
+    --------
+    This is still experimental
+    """
+    
     def __init__(self, connection_string: str, query: str):
         self.connection_string = connection_string
         self.query = query
 
-    def extract_data(self) -> pd.DataFrame:
+    def extract_data(self, **kwargs) -> List[Dict]:
         with sqlite3.connect(self.connection_string) as conn:
             data = pd.read_sql_query(self.query, conn)
         return data.to_dict('records')
+        
 
+
+# This is still experimental
 class XLSsource(Datasource):
     """Excel worksheet datasource"""
     def __init__(self, file_path: str=None, sheet_name: str=None, *args):
@@ -68,8 +87,6 @@ class XLSsource(Datasource):
         self.sheet_name = sheet_name
 
     def extract_data(self) -> pd.DataFrame:
-        if not os.path.exists(self.file_path):
-            raise FileNotFoundError(f"File {self.file_path} does not exist")
         workbook = load_workbook(self.file_path)
         sheet = workbook[self.sheet_name]
         data = []
@@ -77,6 +94,22 @@ class XLSsource(Datasource):
             data.append(row)
         workbook.close()
         data = pd.DataFrame(data)
+
+
+
+
+
+def download_file(url: str=None):
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        local_file_path = os.path.join(os.getcwd(), 'downloaded_data.csv')
+        with open(local_file_path, 'wb') as file:
+            file.write(response.content)
+            print("Downloaded CSV file Successfully📎")
+            return local_file_path
+    else:
+        raise Exception(f"Failed to download file. Status code: {response.status_code}")
 
 
 
