@@ -121,24 +121,26 @@ result = pipeline(your_dataframe)
 
 ## Examples
 
-Comprehensive examples are available in the `examples/` folder:
+Comprehensive examples are available as Jupyter notebooks in the `examples/` folder:
 
-- **`basic_usage_examples.py`**: Basic pipeline and data extraction examples
-- **`transform_examples.py`**: Data transformation examples with various scalers and preprocessors
-- **`comprehensive_transform_example.py`**: Advanced examples showing complex pipelines and custom transforms
+- **`basic_usage_examples.ipynb`**: Basic pipeline and data extraction examples
+- **`transform_examples.ipynb`**: Data transformation examples with various scalers and preprocessors
+- **`comprehensive_transform_examples.ipynb`**: Advanced examples showing complex pipelines and custom transforms
 
-To run the examples:
+To run the examples, you can use Jupyter or open them directly in VS Code:
 
 ```bash
-# Basic usage examples
-python examples/basic_usage_examples.py
+# Install Jupyter if not already installed
+uv add jupyter
 
-# Transform examples  
-python examples/transform_examples.py
+# Launch Jupyter Lab
+jupyter lab examples/
 
-# Comprehensive transform examples
-python examples/comprehensive_transform_example.py
+# Or run a specific notebook
+jupyter notebook examples/basic_usage_examples.ipynb
 ```
+
+Alternatively, you can open the `.ipynb` files directly in VS Code with the Jupyter extension for an integrated experience.
 
 ## Tests
 
