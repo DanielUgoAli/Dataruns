@@ -1,9 +1,0 @@
-1. Add viz
-2. Complete structureeeee
-3. Improve the SQLite source
-4. Add/Rewrite the entire transforms
-5. Add a bit of visualization [Debate whether to implement some from scratch but i'll build on matplotlib or seaborn]
-6. TAKE A LOOK AT CORE, IT IS NOT BEHAVING AS EXCPECTED!!!!!! ## FIXED
-7. Fix the __repr__ in Function # FIXED
-8. Move dependency management to uv. # Done
-9. Also implement image processing necessities.
