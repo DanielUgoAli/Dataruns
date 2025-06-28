@@ -28,7 +28,7 @@ Example Usage:
 """
 
 # Version information
-__version__ = "1.0.dev"
+__version__ = "0.1.1"
 
 
 
@@ -44,7 +44,6 @@ from .core import (
     SelectColumns,
     RenameColumns,
     FilterRows,
-    ApplyFunction,
     OneHotEncoder,
     TransformComposer,
     create_preprocessing_pipeline
@@ -79,7 +78,6 @@ __all__ = [
     'SelectColumns',
     'RenameColumns',
     'FilterRows',
-    'ApplyFunction',
     'OneHotEncoder',
     'TransformComposer',
     'create_preprocessing_pipeline',
