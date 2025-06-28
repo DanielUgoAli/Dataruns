@@ -160,8 +160,7 @@ python tests/test_transforms.py
 dataruns/
 ├── src/dataruns/           # Source code
 │   ├── core/              # Core pipeline and transform functionality
-│   ├── source/            # Data source extractors
-│   └── dl/                # Deep learning utilities(D.N.Use)
+│   └── source/            # Data source extractors
 ├── examples/              # Usage examples and demos
 ├── tests/                 # Test suite
 └── README.md             # This file

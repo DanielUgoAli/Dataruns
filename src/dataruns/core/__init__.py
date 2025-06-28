@@ -43,9 +43,6 @@ from .transforms import (
     # Row operations
     FilterRows,
     
-    # Function application
-    ApplyFunction,
-    
     # Encoding
     OneHotEncoder,
     
@@ -81,9 +78,6 @@ __all__ = [
     
     # Row operations
     'FilterRows',
-    
-    # Function application
-    'ApplyFunction',
     
     # Encoding
     'OneHotEncoder',
