@@ -65,8 +65,6 @@ import numpy as np
 __all__ = [
     # Version info
     '__version__',
-    '__author__',
-    '__email__',
     
     # Core pipeline classes
     'Pipeline',

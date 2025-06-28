@@ -313,28 +313,6 @@ class FilterRows(Transform):
             return data[mask]
 
 
-class ApplyFunction(Transform):
-    """
-    Apply a custom function to the data.
-    """
-    
-    def __init__(self, func: Callable, axis: Optional[int] = None, **kwargs):
-        super().__init__()
-        self.func = func
-        self.axis = axis
-        self.kwargs = kwargs
-    
-    def transform(self, data: Union[np.ndarray, pd.DataFrame]) -> Union[np.ndarray, pd.DataFrame]:
-        """Apply the custom function."""
-        if isinstance(data, pd.DataFrame):
-            if self.axis is not None:
-                return data.apply(self.func, axis=self.axis, **self.kwargs)
-            else:
-                return self.func(data, **self.kwargs)
-        else:
-            return self.func(data, **self.kwargs)
-
-
 class OneHotEncoder(Transform):
     """
     Encode categorical variables as one-hot vectors.
