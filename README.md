@@ -10,7 +10,6 @@ Dataruns is a Python-based library designed for seamless data extraction, transf
   - Scaling (StandardScaler, MinMaxScaler)
   - Missing value handling (DropNA, FillNA)  
   - Column operations (SelectColumns, RenameColumns)
-  - Custom transformations (ApplyFunction)
   - One-hot encoding for categorical variables
 - **Pipeline Composition**: Chain multiple transforms and operations
 - **Flexible Integration**: Works with pandas DataFrames and numpy arrays
@@ -182,7 +181,6 @@ dataruns/
 - **`DropNA`**: Remove rows/columns with missing values
 - **`FillNA`**: Fill missing values with specified strategy
 - **`SelectColumns`**: Select specific columns from DataFrame
-- **`ApplyFunction`**: Apply custom functions to data
 - **`TransformComposer`**: Chain multiple transforms together
 
 ### Data Sources
