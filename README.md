@@ -190,6 +190,7 @@ dataruns/
 
 ## Contributing
 
+*Any editing should be done on the dev branch.*
 Help is much appreciated! Please open a pull request to contribute. 😗
 
 ## License
