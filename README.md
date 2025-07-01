@@ -20,7 +20,17 @@ Dataruns is a Python-based library designed for seamless data extraction, transf
 Clone the repository and install the required dependencies using `uv`:
 
 ```bash
-git clone https://github.com/DanielUgoAli/Dataruns.git
+pip install datatruns
+
+or 
+
+uv pip install dataruns
+```
+
+Or, if you prefer to work with the latest development version, you can clone the repository and set up a virtual environment:
+
+```bash
+git clone -b dev https://github.com/DanielUgoAli/Dataruns.git
 cd Dataruns
 
 # Create a virtual environment with uv
@@ -42,8 +52,6 @@ Alternatively, you can install in development mode:
 # Install in editable mode with all dependencies
 uv pip install -e .
 ```
-
-*Soon to be available on PyPI - just more work needed.*
 
 ## Quick Start
 
