@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dataruns"
-version = "0.1.2"
+version = "0.1.2a"
 description = "A library with Pandas-Like api used for data manipulation and function pipeline execution"
 readme = "dist.md"
 requires-python = ">=3.10"
