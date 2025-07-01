@@ -1,5 +1,5 @@
 # Dataruns Init Files Documentation
-
+*Note this summary was written with AI*
 ## Overview
 All `__init__.py` files have been completely rewritten to provide comprehensive package organization and improved usability.
 
@@ -20,7 +20,7 @@ All `__init__.py` files have been completely rewritten to provide comprehensive 
   - Scaling: `StandardScaler`, `MinMaxScaler`
   - Missing values: `DropNA`, `FillNA`
   - Column ops: `SelectColumns`, `RenameColumns`
-  - Custom: `ApplyFunction`, `FilterRows`, `OneHotEncoder`
+  - Custom: `FilterRows`, `OneHotEncoder`
   - Composition: `TransformComposer`
 - **Core Types**: `Function`, `Data` classes
 - **Convenience Functions**:
