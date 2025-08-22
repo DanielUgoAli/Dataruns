@@ -1,3 +1,4 @@
+**Note: Still a lot of bugs**
 # Dataruns
 
 Dataruns is a Python-based library designed for seamless data extraction, transformation, and pipeline creation. It supports multiple data sources like CSV, SQLite, and Excel, and provides tools for building and applying data processing pipelines with a comprehensive set of data transformations.
