@@ -14,7 +14,6 @@ Dataruns is a Python-based library designed for seamless data extraction, transf
   - One-hot encoding for categorical variables
 - **Pipeline Composition**: Chain multiple transforms and operations
 - **Flexible Integration**: Works with pandas DataFrames and numpy arrays
-- **Experimental Features**: Performance optimization features 😗
 
 ## Installation
 
